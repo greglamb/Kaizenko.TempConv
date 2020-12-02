@@ -12,7 +12,9 @@ namespace Kaizenko.TempConv
 
         public double ReleaseChange()
         {
-            return paid;
+            var change = paid;
+            paid = 0;
+            return change;
         }
 
         public void InsertCoin(double v)

@@ -40,5 +40,20 @@ namespace Kaizenko.TempConv.Tests
             Assert.AreEqual(50, change);
         }
 
+        [Test]
+        public void ReleaseChange_WhenChangeAlreadyReleased_Expect0()
+        {
+            // arrange
+            VendingMachine vendingMachine = new VendingMachine();
+            vendingMachine.InsertCoin(25);
+            vendingMachine.ReleaseChange();
+
+            // act
+            double change = vendingMachine.ReleaseChange();
+
+            // assert
+            Assert.AreEqual(0, change);
+        }
+
     }
 }

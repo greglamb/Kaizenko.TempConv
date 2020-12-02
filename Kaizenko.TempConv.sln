@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaizenko.TempConv", "Kaizenko.TempConv\Kaizenko.TempConv.csproj", "{CFC598D3-A022-42C7-B1E8-72A544292B0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaizenko.TempConv.Tests", "Kaizenko.TempConv.Tests\Kaizenko.TempConv.Tests.csproj", "{FC0BF9CB-BFF1-4F45-AEE4-6DE18B10601E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFC598D3-A022-42C7-B1E8-72A544292B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC598D3-A022-42C7-B1E8-72A544292B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC598D3-A022-42C7-B1E8-72A544292B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC598D3-A022-42C7-B1E8-72A544292B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC0BF9CB-BFF1-4F45-AEE4-6DE18B10601E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC0BF9CB-BFF1-4F45-AEE4-6DE18B10601E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC0BF9CB-BFF1-4F45-AEE4-6DE18B10601E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC0BF9CB-BFF1-4F45-AEE4-6DE18B10601E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC201FF1-0E70-4EFC-8905-791E15877595}
+	EndGlobalSection
+EndGlobal

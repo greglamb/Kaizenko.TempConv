@@ -19,6 +19,17 @@ namespace Kaizenko.TempConv.Tests
         }
 
 
+        [Test]
+        public void RelaseChange_WhenMoney25Inserted_Expected25()
+        {
+            VendingMachine vendingMachine = new VendingMachine();
+            vendingMachine.InsertCoin(25);
+
+            double change = vendingMachine.ReleaseChange();
+            Assert.AreEqual(25, change);
+        }
+
+
 
     }
 }

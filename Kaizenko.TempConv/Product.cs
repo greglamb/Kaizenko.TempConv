@@ -8,7 +8,7 @@ namespace Kaizenko.TempConv
 {
     public class Product
     {
-
+        public double price;
 
     }
 }

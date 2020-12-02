@@ -8,18 +8,18 @@ namespace Kaizenko.TempConv
 {
     public class VendingMachine
     {
-        public double paid;
+        public double coins;
 
         public double ReleaseChange()
         {
-            var change = paid;
-            paid = 0;
+            var change = coins;
+            coins = 0;
             return change;
         }
 
         public void InsertCoin(double v)
         {
-            paid = paid + v;
+            coins = coins + v;
         }
 
         public Product BuyProduct()

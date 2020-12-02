@@ -29,7 +29,16 @@ namespace Kaizenko.TempConv.Tests
             Assert.AreEqual(25, change);
         }
 
+        [Test]
+        public void RelaseChange_WhenMoney50Inserted_Expected50()
+        {
+            VendingMachine vendingMachine = new VendingMachine();
+            vendingMachine.InsertCoin(25);
+            vendingMachine.InsertCoin(25);
 
+            double change = vendingMachine.ReleaseChange();
+            Assert.AreEqual(50, change);
+        }
 
     }
 }

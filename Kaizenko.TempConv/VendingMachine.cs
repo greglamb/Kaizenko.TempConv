@@ -24,8 +24,14 @@ namespace Kaizenko.TempConv
 
         public Product BuyProduct()
         {
-            return null;
-            //return new Product();
+            if (coins == 50)
+            {
+                return new Product();
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

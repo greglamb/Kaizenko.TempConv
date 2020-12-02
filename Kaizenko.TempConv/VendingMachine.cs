@@ -21,5 +21,11 @@ namespace Kaizenko.TempConv
         {
             paid = paid + v;
         }
+
+        public Product BuyProduct()
+        {
+            return null;
+            //return new Product();
+        }
     }
 }

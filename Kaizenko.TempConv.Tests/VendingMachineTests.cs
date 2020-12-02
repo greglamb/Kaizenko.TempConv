@@ -55,5 +55,19 @@ namespace Kaizenko.TempConv.Tests
             Assert.AreEqual(0, change);
         }
 
+        [Test]
+        public void BuyProduct_WhenNoMoneyInserted_ExpectNoProduct()
+        {
+            // arrange
+            VendingMachine vendingMachine = new VendingMachine();
+            // act
+            Product product = vendingMachine.BuyProduct();
+            // assert
+            Assert.IsNull(product);
+
+        }
+
+
+
     }
 }

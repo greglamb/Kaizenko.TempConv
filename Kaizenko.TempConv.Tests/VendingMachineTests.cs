@@ -86,6 +86,20 @@ namespace Kaizenko.TempConv.Tests
             Assert.IsNotNull(product);
         }
 
+        [Test]
+        public void ReleaseChange_WhenBuyingProductWith75C_Expect25C()
+        {
+            // arrange
+            VendingMachine vendingMachine = new VendingMachine();
+            vendingMachine.InsertCoin(25);
+            vendingMachine.InsertCoin(25);
+            vendingMachine.InsertCoin(25);
+            Product product = vendingMachine.BuyProduct();
+            // act
+            double change = vendingMachine.ReleaseChange();
+            // assert
+            Assert.AreEqual(25, change);
+        }
 
     }
 }

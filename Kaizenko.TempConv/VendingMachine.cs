@@ -24,8 +24,9 @@ namespace Kaizenko.TempConv
 
         public Product BuyProduct()
         {
-            if (coins == 50)
+            if (coins >= 50)
             {
+                coins = coins - 50;
                 return new Product();
             }
             else

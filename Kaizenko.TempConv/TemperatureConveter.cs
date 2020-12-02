@@ -10,14 +10,7 @@ namespace Kaizenko.TempConv
     {
         public double ConvertCtoF(double tempInc)
         {
-            switch (tempInc)
-            {
-                case 0: return 32;
-                case 100: return 212;
-                case -40: return -40;
-                case 37: return 98.6;
-            }
-            throw new InvalidOperationException("invalid op for argument: " + tempInc);
+            return tempInc * 9 / 5 + 32;
         }
     }
 }

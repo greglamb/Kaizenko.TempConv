@@ -10,11 +10,19 @@ namespace Kaizenko.TempConv.Tests
 {
     class VendingMachineTests
     {
+        VendingMachine vendingMachine;
+
+        [SetUp]
+        public void Setup()
+        {
+            vendingMachine = new VendingMachine();
+        }
+
         [Test]
         public void ReleaseChange_WhenNoMoneyInserted_Expect0()
         {
             // arrange
-            VendingMachine vendingMachine = new VendingMachine();
+
             // act
             double change = vendingMachine.ReleaseChange();
             // asset
@@ -26,8 +34,7 @@ namespace Kaizenko.TempConv.Tests
         public void RelaseChange_WhenMoney25Inserted_Expected25()
         {
             // arrange
-            VendingMachine vendingMachine = new VendingMachine();
-            vendingMachine.InsertCoin(25);
+            vendingMachine.InsertCoin();
             // act
             double change = vendingMachine.ReleaseChange();
             // assert
@@ -38,9 +45,8 @@ namespace Kaizenko.TempConv.Tests
         public void RelaseChange_WhenMoney50Inserted_Expected50()
         {
             // arrange
-            VendingMachine vendingMachine = new VendingMachine();
-            vendingMachine.InsertCoin(25);
-            vendingMachine.InsertCoin(25);
+            vendingMachine.InsertCoin();
+            vendingMachine.InsertCoin();
             // act
             double change = vendingMachine.ReleaseChange();
             // assert
@@ -51,8 +57,7 @@ namespace Kaizenko.TempConv.Tests
         public void ReleaseChange_WhenChangeAlreadyReleased_Expect0()
         {
             // arrange
-            VendingMachine vendingMachine = new VendingMachine();
-            vendingMachine.InsertCoin(25);
+            vendingMachine.InsertCoin();
             vendingMachine.ReleaseChange();
 
             // act
@@ -66,7 +71,7 @@ namespace Kaizenko.TempConv.Tests
         public void BuyProduct_WhenNoMoneyInserted_ExpectNoProduct()
         {
             // arrange
-            VendingMachine vendingMachine = new VendingMachine();
+
             // act
             Product product = vendingMachine.BuyProduct();
             // assert
@@ -77,9 +82,8 @@ namespace Kaizenko.TempConv.Tests
         public void BuyProduct_When50cIsInserted_ExpectProduct()
         {
             // arrange
-            VendingMachine vendingMachine = new VendingMachine();
-            vendingMachine.InsertCoin(25);
-            vendingMachine.InsertCoin(25);
+            vendingMachine.InsertCoin();
+            vendingMachine.InsertCoin();
             // act
             Product product = vendingMachine.BuyProduct();
             // assert
@@ -90,10 +94,9 @@ namespace Kaizenko.TempConv.Tests
         public void ReleaseChange_WhenBuyingProductWith75C_Expect25C()
         {
             // arrange
-            VendingMachine vendingMachine = new VendingMachine();
-            vendingMachine.InsertCoin(25);
-            vendingMachine.InsertCoin(25);
-            vendingMachine.InsertCoin(25);
+            vendingMachine.InsertCoin();
+            vendingMachine.InsertCoin();
+            vendingMachine.InsertCoin();
             Product product = vendingMachine.BuyProduct();
             // act
             double change = vendingMachine.ReleaseChange();

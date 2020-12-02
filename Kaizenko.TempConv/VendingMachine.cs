@@ -17,9 +17,9 @@ namespace Kaizenko.TempConv
             return change;
         }
 
-        public void InsertCoin(double v)
+        public void InsertCoin()
         {
-            coins = coins + v;
+            coins = coins + 25;
         }
 
         public Product BuyProduct()

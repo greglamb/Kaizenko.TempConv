@@ -92,5 +92,14 @@ namespace Kaizenko.TempConv.Tests
             Assert.AreEqual(25, change);
         }
 
+        [Test]
+        public void InsertCoin_WhenCalled_ExpectCallToMakePaymentWith25()
+        {
+            // act
+            vendingMachine.InsertCoin();
+            // assert
+            mockPaymentProcessor.Verify(p => p.MakePayment(25), Times.Once);
+        }
+
     }
 }

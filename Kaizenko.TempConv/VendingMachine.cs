@@ -9,6 +9,7 @@ namespace Kaizenko.TempConv
     public class VendingMachine
     {
         public IPaymentProcessor paymentProcessor;
+        String displayMsg = "";
 
         public VendingMachine(IPaymentProcessor paymentProcessor)
         {
@@ -21,7 +22,23 @@ namespace Kaizenko.TempConv
         {
             //throw new NotImplementedException();
 
-            return paymentProcessor.ReturnChange();
+            double change = paymentProcessor.ReturnChange();
+
+            if (change == 0)
+            {
+                displayMsg = "Sorry no change left";
+            }
+            else
+            {
+                displayMsg = "Please take your change";
+            }
+
+            return change;
+        }
+
+        public String GetMessage()
+        {
+            return displayMsg;
         }
 
         public void InsertCoin()

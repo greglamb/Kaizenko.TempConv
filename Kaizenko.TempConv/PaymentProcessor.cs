@@ -33,7 +33,7 @@ namespace Kaizenko.TempConv
             return change;
         }
 
-        public void SpendPayment(double amount)
+        public void ProcessPayment(double amount)
         {
             //throw new NotImplementedException();
 

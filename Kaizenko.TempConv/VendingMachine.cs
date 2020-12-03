@@ -37,7 +37,7 @@ namespace Kaizenko.TempConv
 
             if (paymentProcessor.IsPaymentMade(50))
             {
-                paymentProcessor.SpendPayment(50);
+                paymentProcessor.ProcessPayment(50);
                 return new Product();
             }
             else

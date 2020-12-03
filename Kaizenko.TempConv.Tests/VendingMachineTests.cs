@@ -15,7 +15,8 @@ namespace Kaizenko.TempConv.Tests
         [SetUp]
         public void Setup()
         {
-            vendingMachine = new VendingMachine();
+            IPaymentProcessor paymentProcessor = new CoinPaymentProcessor();
+            vendingMachine = new VendingMachine(paymentProcessor);
         }
 
         [Test]

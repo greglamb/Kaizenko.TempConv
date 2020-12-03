@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kaizenko.TempConv
 {
-    public class PaymentProcessor
+    public class CoinPaymentProcessor : IPaymentProcessor
     {
         public double payment;
 

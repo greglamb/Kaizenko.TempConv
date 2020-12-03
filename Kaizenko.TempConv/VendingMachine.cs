@@ -8,13 +8,13 @@ namespace Kaizenko.TempConv
 {
     public class VendingMachine
     {
-        public PaymentProcessor paymentProcessor;
+        public IPaymentProcessor paymentProcessor;
 
-        public VendingMachine()
+        public VendingMachine(IPaymentProcessor paymentProcessor)
         {
             //throw new NotImplementedException();
 
-            paymentProcessor = new PaymentProcessor();
+            this.paymentProcessor = paymentProcessor;
         }
 
         public double ReleaseChange()

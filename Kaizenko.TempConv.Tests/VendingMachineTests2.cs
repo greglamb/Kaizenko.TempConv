@@ -18,6 +18,7 @@ namespace Kaizenko.TempConv.Tests
         public void Setup()
         {
             vendingMachine = new VendingMachine(mockPaymentProcessor.Object);
+            mockPaymentProcessor.Invocations.Clear();
         }
 
         [Test]
@@ -99,6 +100,28 @@ namespace Kaizenko.TempConv.Tests
             vendingMachine.InsertCoin();
             // assert
             mockPaymentProcessor.Verify(p => p.MakePayment(25), Times.Once);
+        }
+
+        [Test]
+        public void BuyProduct_WhenEnoughIsInserted_ExpectPaymentProcessed()
+        {
+            // arrange
+            mockPaymentProcessor.Setup(p => p.IsPaymentMade(It.IsAny<double>())).Returns(true);
+            // act
+            Product product = vendingMachine.BuyProduct();
+            // assert
+            mockPaymentProcessor.Verify(p => p.ProcessPayment(It.IsAny<double>()), Times.Once);
+        }
+
+        [Test]
+        public void BuyProduct_WhenNotEnoughIsInserted_ExpectPaymentNotProcessed()
+        {
+            // arrange
+            mockPaymentProcessor.Setup(p => p.IsPaymentMade(It.IsAny<double>())).Returns(false);
+            // act
+            Product product = vendingMachine.BuyProduct();
+            // assert
+            mockPaymentProcessor.Verify(p => p.ProcessPayment(It.IsAny<double>()), Times.Never);
         }
 
     }

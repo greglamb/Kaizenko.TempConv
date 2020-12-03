@@ -26,7 +26,7 @@ namespace Kaizenko.TempConv.Tests
             // arrange
             mockPaymentProcessor.Setup(p => p.ReturnPayment()).Returns(0);
             vendingMachine.ReleaseChange();
-            
+
             // act
             String message = vendingMachine.GetMessage();
 
@@ -46,6 +46,29 @@ namespace Kaizenko.TempConv.Tests
 
             // assert
             Assert.AreEqual("Please take your change", message);
+        }
+
+        [Test]
+        public void BuyProduct_WhenNotEnoughMoneyInserted_ExpectNoProduct()
+        {
+            // arrange
+            mockPaymentProcessor.Setup(p => p.IsPaymentMade(50)).Returns(false);
+            // act
+            Product product = vendingMachine.BuyProduct();
+            // assert
+            Assert.IsNull(product);
+        }
+
+
+        [Test]
+        public void BuyProduct_WhenEnoughIsInserted_ExpectProduct()
+        {
+            // arrange
+            mockPaymentProcessor.Setup(p => p.IsPaymentMade(50)).Returns(true);
+            // act
+            Product product = vendingMachine.BuyProduct();
+            // assert
+            Assert.IsNotNull(product);
         }
 
     }

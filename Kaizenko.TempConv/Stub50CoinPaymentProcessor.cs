@@ -24,11 +24,6 @@ namespace Kaizenko.TempConv
             return false;
         }
 
-        public double ReturnChange()
-        {
-            return 50;
-        }
-
         public void ProcessPayment(double amount)
         {
 

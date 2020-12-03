@@ -33,15 +33,6 @@ namespace Kaizenko.TempConv
             return payment >= price;
         }
 
-        public double ReturnChange()
-        {
-            //throw new NotImplementedException();
-
-            var change = payment;
-            payment = 0;
-            return change;
-        }
-
         public void ProcessPayment(double amount)
         {
             //throw new NotImplementedException();

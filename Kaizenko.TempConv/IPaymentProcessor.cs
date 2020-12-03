@@ -5,7 +5,6 @@
         bool IsPaymentMade(double price);
         void MakePayment(double amount);
         void ProcessPayment(double amount);
-        double ReturnChange();
         double ReturnPayment();
     }
 }

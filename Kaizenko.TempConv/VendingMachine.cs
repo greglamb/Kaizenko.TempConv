@@ -22,7 +22,7 @@ namespace Kaizenko.TempConv
         {
             //throw new NotImplementedException();
 
-            double change = paymentProcessor.ReturnChange();
+            double change = paymentProcessor.ReturnPayment();
 
             if (change == 0)
             {

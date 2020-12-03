@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Kaizenko.TempConv
 {
-    public class StubCoinPaymentProcessor : IPaymentProcessor
+    public class Stub50CoinPaymentProcessor : IPaymentProcessor
     {
         public double payment;
 
         public double ReturnPayment()
         {
-            return 0;
+            return 50;
         }
 
         public void MakePayment(double amount)
@@ -26,7 +26,7 @@ namespace Kaizenko.TempConv
 
         public double ReturnChange()
         {
-            return 0;
+            return 50;
         }
 
         public void ProcessPayment(double amount)

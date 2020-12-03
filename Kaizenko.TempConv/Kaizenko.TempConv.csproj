@@ -48,7 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StubCoinPaymentProcessor.cs" />
+    <Compile Include="Stub50CoinPaymentProcessor.cs" />
+    <Compile Include="Stub0CoinPaymentProcessor.cs" />
     <Compile Include="CoinPaymentProcessor.cs" />
     <Compile Include="IPaymentProcessor.cs" />
     <Compile Include="Product.cs" />

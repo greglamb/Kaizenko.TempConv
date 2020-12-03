@@ -81,5 +81,16 @@ namespace Kaizenko.TempConv.Tests
             Assert.AreEqual(0, change);
         }
 
+        [Test]
+        public void ReleaseChange_WhenChange_ExpectChange()
+        {
+            // arrange
+            mockPaymentProcessor.Setup(p => p.ReturnPayment()).Returns(25);
+            // act
+            double change = vendingMachine.ReleaseChange();
+            // asset
+            Assert.AreEqual(25, change);
+        }
+
     }
 }

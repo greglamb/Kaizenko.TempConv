@@ -5,18 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Kaizenko.TempConv;
+using Moq;
 
 namespace Kaizenko.TempConv.Tests
 {
     class VendingMachineTests2
     {
+        VendingMachine vendingMachine;
+        Mock<IPaymentProcessor> mockPaymentProcessor = new Mock<IPaymentProcessor>();
+
+        [SetUp]
+        public void Setup()
+        {
+            vendingMachine = new VendingMachine(mockPaymentProcessor.Object);
+        }
+
         [Test]
         public void GetMessage_WhenNoChange_Expect_SorryMessage()
         {
             // arrange
-            IPaymentProcessor paymentProcessor = new Stub0CoinPaymentProcessor();
-            VendingMachine vendingMachine = new VendingMachine(paymentProcessor);
-
+            mockPaymentProcessor.Setup(p => p.ReturnPayment()).Returns(0);
             vendingMachine.ReleaseChange();
             
             // act
@@ -30,9 +38,7 @@ namespace Kaizenko.TempConv.Tests
         public void GetMessage_WhenChange_Expect_TakeChange()
         {
             // arrange
-            IPaymentProcessor paymentProcessor = new Stub50CoinPaymentProcessor();
-            VendingMachine vendingMachine = new VendingMachine(paymentProcessor);
-
+            mockPaymentProcessor.Setup(p => p.ReturnPayment()).Returns(50);
             vendingMachine.ReleaseChange();
 
             // act

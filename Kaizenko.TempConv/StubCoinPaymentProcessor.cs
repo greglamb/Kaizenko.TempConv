@@ -12,22 +12,21 @@ namespace Kaizenko.TempConv
 
         public double ReturnPayment()
         {
-
+            return 0;
         }
 
         public void MakePayment(double amount)
         {
-
         }
 
         public bool IsPaymentMade(double price)
         {
-
+            return false;
         }
 
         public double ReturnChange()
         {
-
+            return 0;
         }
 
         public void ProcessPayment(double amount)

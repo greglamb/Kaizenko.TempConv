@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoinPaymentProcessorTests.cs" />
     <Compile Include="VendingMachineTests2.cs" />
     <Compile Include="VendingMachineTests.cs" />
     <Compile Include="TemperatureConverterTests.cs" />

@@ -52,23 +52,33 @@ namespace Kaizenko.TempConv.Tests
         public void BuyProduct_WhenNotEnoughMoneyInserted_ExpectNoProduct()
         {
             // arrange
-            mockPaymentProcessor.Setup(p => p.IsPaymentMade(50)).Returns(false);
+            mockPaymentProcessor.Setup(p => p.IsPaymentMade(It.IsAny<double>())).Returns(false);
             // act
             Product product = vendingMachine.BuyProduct();
             // assert
             Assert.IsNull(product);
         }
 
-
         [Test]
         public void BuyProduct_WhenEnoughIsInserted_ExpectProduct()
         {
             // arrange
-            mockPaymentProcessor.Setup(p => p.IsPaymentMade(50)).Returns(true);
+            mockPaymentProcessor.Setup(p => p.IsPaymentMade(It.IsAny<double>())).Returns(true);
             // act
             Product product = vendingMachine.BuyProduct();
             // assert
             Assert.IsNotNull(product);
+        }
+
+        [Test]
+        public void ReleaseChange_WhenNoChange_Expect0()
+        {
+            // arrange
+            mockPaymentProcessor.Setup(p => p.ReturnPayment()).Returns(0);
+            // act
+            double change = vendingMachine.ReleaseChange();
+            // asset
+            Assert.AreEqual(0, change);
         }
 
     }

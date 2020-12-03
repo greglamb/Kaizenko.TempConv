@@ -8,25 +8,28 @@ namespace Kaizenko.TempConv
 {
     public class VendingMachine
     {
-        public double coins;
+        public PaymentProcessor paymentProcessor;
+
+        public VendingMachine()
+        {
+            paymentProcessor = new PaymentProcessor();
+        }
 
         public double ReleaseChange()
         {
-            var change = coins;
-            coins = 0;
-            return change;
+            return paymentProcessor.ReturnChange();
         }
 
         public void InsertCoin()
         {
-            coins = coins + 25;
+            paymentProcessor.MakePayment(25);
         }
 
         public Product BuyProduct()
         {
-            if (coins >= 50)
+            if (paymentProcessor.IsPaymentMade(50))
             {
-                coins = coins - 50;
+                paymentProcessor.SpendPayment(50);
                 return new Product();
             }
             else

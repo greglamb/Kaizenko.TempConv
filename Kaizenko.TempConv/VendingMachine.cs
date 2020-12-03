@@ -12,21 +12,29 @@ namespace Kaizenko.TempConv
 
         public VendingMachine()
         {
+            //throw new NotImplementedException();
+
             paymentProcessor = new PaymentProcessor();
         }
 
         public double ReleaseChange()
         {
+            //throw new NotImplementedException();
+
             return paymentProcessor.ReturnChange();
         }
 
         public void InsertCoin()
         {
+            //throw new NotImplementedException();
+
             paymentProcessor.MakePayment(25);
         }
 
         public Product BuyProduct()
         {
+            //throw new NotImplementedException();
+
             if (paymentProcessor.IsPaymentMade(50))
             {
                 paymentProcessor.SpendPayment(50);

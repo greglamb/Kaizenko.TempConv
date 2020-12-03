@@ -13,18 +13,21 @@ namespace Kaizenko.TempConv
         public void MakePayment(double amount)
         {
             //throw new NotImplementedException();
+
             payment = payment + 25;
         }
 
         public bool IsPaymentMade(double price)
         {
             //throw new NotImplementedException();
+
             return payment >= price;
         }
 
         public double ReturnChange()
         {
             //throw new NotImplementedException();
+
             var change = payment;
             payment = 0;
             return change;
@@ -32,6 +35,8 @@ namespace Kaizenko.TempConv
 
         public void SpendPayment(double amount)
         {
+            //throw new NotImplementedException();
+
             payment = payment - amount;
         }
     }

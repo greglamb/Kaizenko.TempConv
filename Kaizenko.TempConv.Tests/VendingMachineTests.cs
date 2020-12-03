@@ -29,7 +29,6 @@ namespace Kaizenko.TempConv.Tests
             Assert.AreEqual(0, change);
         }
 
-
         [Test]
         public void RelaseChange_WhenMoney25Inserted_Expected25()
         {

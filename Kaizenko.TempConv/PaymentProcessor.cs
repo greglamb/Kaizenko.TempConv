@@ -10,6 +10,15 @@ namespace Kaizenko.TempConv
     {
         public double payment;
 
+        public double ReturnPayment()
+        {
+            //throw new NotImplementedException();
+
+            double change = payment;
+            payment = 0;
+            return change;
+        }
+
         public void MakePayment(double amount)
         {
             //throw new NotImplementedException();

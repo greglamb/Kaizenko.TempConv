@@ -61,6 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmergencyTransmitter.cs" />
+    <Compile Include="Rover.cs" />
     <Compile Include="Stub50CoinPaymentProcessor.cs" />
     <Compile Include="Stub0CoinPaymentProcessor.cs" />
     <Compile Include="CoinPaymentProcessor.cs" />
